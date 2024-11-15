@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+
+actor Admin as "Admin"
+actor Operator as "Operator"
+actor Anggota as "Anggota"
+
+rectangle "Sistem Simpan Pinjam" {
+    usecase "Kelola Anggota" as UC1
+    usecase "Tambah Simpanan" as UC2
+    usecase "Tarik Simpanan" as UC3
+    usecase "Pengajuan Pinjaman" as UC4
+    usecase "Persetujuan Pinjaman" as UC5
+    usecase "Pembayaran Angsuran" as UC6
+    usecase "Update Status Pinjaman" as UC7
+    usecase "Lihat Laporan Keuangan" as UC8
+    usecase "Cek Status Laporan" as UC9
+}
+
+Admin --> UC1
+Admin --> UC4
+Admin --> UC5
+Admin --> UC8
+
+Operator --> UC2
+Operator --> UC3
+Operator --> UC6
+Operator --> UC7
+
+Anggota --> UC2
+Anggota --> UC3
+Anggota --> UC4
+Anggota --> UC6
+Anggota --> UC9
+
+@enduml

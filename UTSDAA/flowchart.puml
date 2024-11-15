@@ -1,0 +1,21 @@
+@startuml me
+actor Admin
+
+' Login use case
+Admin -> (Login) : Masukkan kredensial
+
+(Login) -> (Dashboard admin) 
+
+(Dashboard admin) --> (Pengelolaan Menu) : Akses pengelolaan menu
+(Pengelolaan Menu) --> (Tambah Menu) : Menambah menu
+(Pengelolaan Menu) --> (Edit Menu) : Mengedit menu
+(Pengelolaan Menu) --> (Hapus Menu) : Menghapus menu
+(Pengelolaan Menu) --> (Lihat Menu) : Melihat menu
+
+' Pengelolaan Kategori use cases
+(Dashboard admin) --> (Pengelolaan Kategori) : Akses Pengelolaan Kategori
+(Pengelolaan Kategori) --> (Tambah Kategori) : Menambah kategori
+(Pengelolaan Kategori) --> (Edit Kategori) : Mengedit kategori
+(Pengelolaan Kategori) --> (Hapus Kategori) : Menghapus kategori
+
+@enduml

@@ -1,0 +1,34 @@
+@startuml menu
+actor Admin
+
+usecase "Masukkan Kredensial" as UC1
+usecase "Verifikasi Kredensial" as UC2
+usecase "Login Berhasil" as UC3
+usecase "Login Gagal" as UC4
+usecase "Akses Pengelolaan Menu" as UC5
+usecase "Tambah Menu" as UC6
+usecase "Edit Menu" as UC7
+usecase "Hapus Menu" as UC8
+usecase "Akses Pengelolaan Kategori" as UC10
+usecase "Tambah Kategori" as UC11
+usecase "Edit Kategori" as UC12
+usecase "Hapus Kategori" as UC13
+usecase "Logout" as UC14
+
+Admin --> UC1
+UC1 --> UC2
+UC2 --> UC4 : tidak valid
+UC4 --> UC1 : Kembali ke menu login
+UC2 --> UC3 : valid
+UC3 --> UC5
+UC5 --> UC6 : include
+UC5 --> UC7 : include
+UC5 --> UC8 : include
+UC5 --> UC14 : extend
+
+UC5 --> UC10 : include
+UC10 --> UC11 : Menambah kategori
+UC10 --> UC12 : Mengedit kategori
+UC10 --> UC13 : Menghapus kategori
+
+@enduml

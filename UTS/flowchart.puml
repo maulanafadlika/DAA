@@ -1,0 +1,49 @@
+@startuml
+start
+:Login ke Sistem;
+
+if (Login Berhasil?) then (Ya)
+    :Pilih Menu Utama;
+    
+    if (Pilih Kelola Anggota?) then (Ya)
+        :Tambah Anggota;
+        :Edit Anggota;
+        :Hapus Anggota;
+        :Kembali ke Menu Utama;
+    endif
+
+    if (Pilih Transaksi Simpanan?) then (Ya)
+        :Setor Simpanan;
+        :Tarik Simpanan;
+        :Update Saldo Simpanan;
+        :Kembali ke Menu Utama;
+    endif
+
+    if (Pilih Pengajuan Pinjaman?) then (Ya)
+        :Ajukan Pinjaman Baru;
+        :Proses Persetujuan Pinjaman;
+        :Update Status Pinjaman;
+        :Kembali ke Menu Utama;
+    endif
+
+    if (Pilih Pembayaran Angsuran?) then (Ya)
+        :Input Pembayaran Angsuran;
+        :Update Sisa Pinjaman;
+        :Kembali ke Menu Utama;
+    endif
+
+    if (Pilih Lihat Laporan?) then (Ya)
+        :Tampilkan Laporan Simpanan;
+        :Tampilkan Laporan Pinjaman;
+        :Tampilkan Riwayat Transaksi;
+        :Kembali ke Menu Utama;
+    endif
+
+else (Tidak)
+    :Tampilkan Pesan Error;
+    :Kembali ke Login;
+endif
+
+:Logout dan Selesai;
+stop
+@enduml
